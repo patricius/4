@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="FoursquareApp">
+<head>
+    <meta name="keywords" content="angularjs,SPA,Single Page Application,bootstrap,bootstrap ui,tutorial,JS framework,foursquare,foursquare api,api,web api,Taiseer Joudeh" />
+    <meta name="description" content="SPA built using angularjs, this tutorial integrates with foursquare APIs, back end built using Asp.net web api,creatd by Taiseer Joudeh" />
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>Explore Foursquare</title>
+    <link href="content/amelia-bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/toaster.css" rel="stylesheet" />
+    <link href="content/loading-bar.min.css" rel="stylesheet" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<body>
+
+    <div id="page">
+        <header class="container" data-ng-controller="navigationController">
+            <div id="menu" class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </button>
+                    <div id="logo">
+                        <a href='#/'>
+                            <h4>Explore Foursquare</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-collapse collapse" data-collapse="!navbarExpanded">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li data-ng-class="{'active':isActive('/explore')}"><a href="#/explore">Explore</a></li>
+                        <li data-ng-class="{'active':isActive('/places')}"><a href="#/places">My Places</a></li>
+                        <li data-ng-class="{'active':isActive('/about')}"><a href="#/about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section id="body" class="container">
+            <div data-ng-view=""></div>
+        </section>
+        <hr />
+       
+        <section class="container" id="body">
+            <div></div>
+        </section>
+
+        <hr />
+
+        <footer class="container"></footer>
+    </div>
+</body>
+</html>
+<!-- 3rd party libraries -->
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+
+
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/angular-animate.min.js"></script>
+<script type="text/javascript" src="scripts//angular-route.min.js" ></script>
+<script type="text/javascript" src="scripts/angular-resource.min.js"></script>
+<script type="text/javascript" src="scripts/angular-animate.min.js"></script>
+<script type="text/javascript" src="scripts/ui-bootstrap-0.10.0.min.js"></script>
+<script type="text/javascript" src="scripts/ui-bootstrap-tpls-0.10.0.min.js"></script>
+<script type="text/javascript" src="scripts/toaster.js"></script>
+<script type="text/javascript" src="scripts/loading-bar.min.js"></script>
+
+
+
+<!-- Load app main script -->
+<script type="text/javascript" src="scripts/app/app.js"></script>
+
+<!-- Load services -->
+<script src="scripts/app/services/placeExplorerService.js"></script>
+<script src="scripts/app/services/placesPhotoService.js"></script>
+<script src="scripts/app/services/placesDataService.js"></script>
+
+<!-- Load controllers -->
+<script src="scripts/app/controllers/placesPhotosController.js"></script>
+<script src="scripts/app/controllers/placesExplorerController.js"></script>
+<script src="scripts/app/controllers/userContextController.js"></script>
+<script src="scripts/app/controllers/myPlacesController.js"></script>
+<script src="scripts/app/controllers/navigationController.js"></script>
+<script src="scripts/app/controllers/aboutController.js"></script>
+
+<!-- Load custom filters -->
+<script src="scripts/app/filters/placeNameCategoryFilter.js"></script>
+
+<!-- Load custom directives -->
+<script src="scripts/app/directives/fsUnique.js"></script>
